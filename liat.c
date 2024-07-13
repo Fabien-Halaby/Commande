@@ -3,15 +3,15 @@
 #include <string.h>
 #include "liat.h"
 
-/******************README**********************/ 
-///$gcc -o liat -c liat.c
-///$./liat -n [nombre de ligne] [nom du fichier]
-/**********************************************/
 int main(int argc,char *argv[])
 {
-	int n = atoi(argv[2]);
-	if(argc == 4 || strcmp(argv[1],"-n") == 0)
+	if(argc == 2)
 	{
+		tail(argv[1],10);
+	}
+	else if(argc == 4 || strcmp(argv[1],"-n") == 0)
+	{
+		int n = atoi(argv[2]);
 		tail(argv[3],n);
 	}
 	else
